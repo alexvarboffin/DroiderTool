@@ -1,12 +1,16 @@
 @echo off
 color 0a
 
+rem Tag mismatch error-Android studio
+rem Fix ERROR: Tag mismatch!
+
+
 mkdir C:\Users\%username%\.gradle\wrapper\dists
 cd /d C:\Users\%username%\.gradle\wrapper\dists
 
 dir
 
-
+taskkill.exe /F /IM studio.exe
 taskkill.exe /F /IM java.exe
 
 echo ======================================= 
@@ -39,6 +43,9 @@ rmdir /s /q gradle-4.10.1-all
 rmdir /s /q gradle-4.10.2-all
 rmdir /s /q gradle-4.10.3-all
 rmdir /s /q gradle-4.9-rc-1-all
+
+rmdir /s /q gradle-5.1.1-all
+rmdir /s /q gradle-5.1.1-bin
 
 del /f /s /q C:\Users\%username%\.gradle\caches 1>nul
 rmdir /s /q C:\Users\%username%\.gradle\caches
