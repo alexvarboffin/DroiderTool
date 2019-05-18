@@ -33,21 +33,19 @@ rem adb connect 127.0.0.1:61001
 "%FOO%" devices
 
 
-
-"%FOO%" devices
 "%FOO%" -s 127.0.0.1:62001 push burp.pem /sdcard/my_certificates
 
 "%FOO%" -s 127.0.0.1:62001 shell "mount -o remount /system"
 
 "%FOO%" -s 127.0.0.1:62001 push hosts /system/etc
 
-
+"%FOO%" -s 127.0.0.1:62001 shell "ls -l /system/app/*"
 "%FOO%" -s 127.0.0.1:62001 shell "rm /system/app/launcher*.apk"
-"%FOO%" install-r "Apex Launcher Customize Secure and Efficient_v4.5.1_apkpure.com.apk" -s 127.0.0.1:62001
+"%FOO%" -s 127.0.0.1:62001 install -r "Apex Launcher Customize Secure and Efficient_v4.5.1_apkpure.com.apk"
 
 
-"%FOO%" install-r "Certificate Installer_v1.1.1_apkpure.com.apk" -s 127.0.0.1:62001
-"%FOO%" install -r "Nova Launcher_v5.5.4_apkpure.com.apk" -s 127.0.0.1:62001
+"%FOO%" -s 127.0.0.1:62001 install -r "Certificate Installer_v1.1.1_apkpure.com.apk"
+rem "%FOO%" -s 127.0.0.1:62001 install -r "Nova Launcher_v5.5.4_apkpure.com.apk"
 
 
 
