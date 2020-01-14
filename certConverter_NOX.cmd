@@ -1,3 +1,5 @@
+﻿rem https://slproweb.com/products/Win32OpenSSL.html
+
 
 rem При установке сертификата через Android Certificate Installer
 rem Прокси на устройстве должен быть отключен
@@ -16,7 +18,7 @@ rm cacert.der
 rm burp.pem
 
 wget http://127.0.0.1:8080/cert -O cacert.der
-openssl x509 -inform der -in cacert.der -out burp.pem
+D:\bin\openssl x509 -inform der -in cacert.der -out burp.pem
 
 
 adb kill-server
@@ -27,9 +29,6 @@ rem adb connect 127.0.0.1:62001
 rem adb connect 127.0.0.1:61001
 
 "%FOO%" connect 127.0.0.1:62001
-
-
-
 "%FOO%" devices
 
 
@@ -45,7 +44,7 @@ rem adb connect 127.0.0.1:61001
 
 "%FOO%" -s 127.0.0.1:62001 install -r "Apex Launcher Customize Secure and Efficient_v4.5.1_apkpure.com.apk"
 "%FOO%" -s 127.0.0.1:62001 install -r "Certificate Installer_v1.1.1_apkpure.com.apk"
-
+"%FOO%" -s 127.0.0.1:62001 install -r "Fake GPS location_v2.0.6.apk"
 
 rem "%FOO%" -s 127.0.0.1:62001 install -r "Nova Launcher_v5.5.4_apkpure.com.apk"
 
